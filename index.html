@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>X.com</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+      main {
+        height: 100dvh;
+        display: grid;
+        grid-template-columns: 80vmin auto;
+        grid-template-rows: auto;
+        align-items: center;
+      }
+      .circle {
+        --base: 0;
+        position: relative;
+        width: 80vmin;
+        height: 80vmin;
+      }
+      .dotcom {
+        font-weight: bold;
+        font-size: 8vmin;
+      }
+      .circle > span {
+        --index: 0;
+        --offset: calc(var(--index) - 26 * var(--base));
+        --rot: calc(1turn / 26 * var(--offset));
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 10vmin;
+        translate: calc(-50% + cos(var(--rot)) * 35vmin)
+          calc(-50% + sin(var(--rot)) * 35vmin);
+        scale: calc(1 + 0.4 * exp(-1 * pow(var(--offset), 2)));
+      }
+      .circle > span:nth-child(2) {
+        --index: 1;
+      }
+      .circle > span:nth-child(3) {
+        --index: 2;
+      }
+      .circle > span:nth-child(4) {
+        --index: 3;
+      }
+      .circle > span:nth-child(5) {
+        --index: 4;
+      }
+      .circle > span:nth-child(6) {
+        --index: 5;
+      }
+      .circle > span:nth-child(7) {
+        --index: 6;
+      }
+      .circle > span:nth-child(8) {
+        --index: 7;
+      }
+      .circle > span:nth-child(9) {
+        --index: 8;
+      }
+      .circle > span:nth-child(10) {
+        --index: 9;
+      }
+      .circle > span:nth-child(11) {
+        --index: 10;
+      }
+      .circle > span:nth-child(12) {
+        --index: 11;
+      }
+      .circle > span:nth-child(13) {
+        --index: 12;
+      }
+      .circle > span:nth-child(14) {
+        --index: 13;
+      }
+      .circle > span:nth-child(15) {
+        --index: 14;
+      }
+      .circle > span:nth-child(16) {
+        --index: 15;
+      }
+      .circle > span:nth-child(17) {
+        --index: 16;
+      }
+      .circle > span:nth-child(18) {
+        --index: 17;
+      }
+      .circle > span:nth-child(19) {
+        --index: 18;
+      }
+      .circle > span:nth-child(20) {
+        --index: 19;
+      }
+      .circle > span:nth-child(21) {
+        --index: 20;
+      }
+      .circle > span:nth-child(22) {
+        --index: 21;
+      }
+      .circle > span:nth-child(23) {
+        --index: 22;
+      }
+      .circle > span:nth-child(24) {
+        --index: 23;
+      }
+      .circle > span:nth-child(25) {
+        --index: 24;
+      }
+      .circle > span:nth-child(26) {
+        --index: 25;
+      }
+
+      @property --base {
+        syntax: "<number>";
+        initial-value: 0;
+        inherits: true;
+      }
+
+      @keyframes spin {
+        from {
+          --base: 0;
+        }
+        to {
+          --base: 1;
+        }
+      }
+      .circle {
+        animation: spin 30s linear infinite;
+      }
+
+      @supports (animation-timeline: scroll(block root)) {
+        body {
+          height: 10000vh;
+        }
+        main {
+          position: fixed;
+          top: 0;
+          left: 0;
+        }
+        .circle {
+          animation: spin-scroll auto linear;
+          animation-timeline: scroll(block root);
+        }
+        @keyframes spin-scroll {
+          from {
+            --base: 0;
+          }
+          to {
+            --base: 20;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="circle">
+        <span>𝔸</span>
+        <span>𝔹</span>
+        <span>ℂ</span>
+        <span>𝔻</span>
+        <span>𝔼</span>
+        <span>𝔽</span>
+        <span>𝔾</span>
+        <span>ℍ</span>
+        <span>𝕀</span>
+        <span>𝕁</span>
+        <span>𝕂</span>
+        <span>𝕃</span>
+        <span>𝕄</span>
+        <span>ℕ</span>
+        <span>𝕆</span>
+        <span>ℙ</span>
+        <span>ℚ</span>
+        <span>ℝ</span>
+        <span>𝕊</span>
+        <span>𝕋</span>
+        <span>𝕌</span>
+        <span>𝕍</span>
+        <span>𝕎</span>
+        <span>𝕏</span>
+        <span>𝕐</span>
+        <span>ℤ</span>
+      </div>
+      <div class="dotcom">.com</div>
+    </main>
+  </body>
+</html>
